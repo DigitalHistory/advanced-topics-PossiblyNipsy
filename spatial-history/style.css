@@ -2,6 +2,12 @@
 
 /* add any styling for the central column here */
 div.container {
+  background-color:
+}
+
+p {
+  font-size: 20px;
+  font-color: #e0e0e0;
 }
 
 div#mapcontainer {
@@ -9,9 +15,15 @@ div#mapcontainer {
   font-size:11px;
   border:6px double #5E5C63;
   width:66%;
+  margin-right: 15px;
   float:left;
+  margin-bottom: 15px;
 }
 
+#picture {
+  object-fit: contain;
+  max-width:80%;
+}
 /* you can change the size of the map here if you want
    you can even use percentages instead of pixels.
    We let the width be set by the containing element,
@@ -25,13 +37,20 @@ div#map_canvas {
 have to add some extra css to the mapcontainer div */
 div#map_legend {
     max-width:30%;
-    float:left;
+    float:right;
+    margin-left: 10px;
+    position:relative;
+    margin-top; 0px;
+    outline-style: dotted;
+    outline-color: white;
+    outline-width: 2px;
+    margin-bottom: 20px;
 }
 
 /* if you want, you can make the text in the legend less ugly by adding
 extra css classes */
 div#map_legend h1, div#map_legend h3 {
-
+  text-decoration:underline;
 }
 
 // make it obvious that the legend text is clickable
@@ -50,12 +69,45 @@ button.rounded {
   border-radius:5px;
   border: 1px black solid;
 }
-button#hide {
-  background:orange;
-}
 button#show {
   background:green;
+  color:white;
 }
+button#hide {
+  background:blue;
+  color:white;
+}
+button#showOrangeZone {
+  background:orange;
+  color:white;
+  display:block;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+button#hideOrangeZone {
+  background:green;
+  color:white;
+  display:block;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+button#showRedZone {
+  background:red;
+  color:white;
+  display:block;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+button#hideRedZone {
+  background:green;
+  color:white;
+  display:block;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+
+
 
 /* use these last three to style the text inside the
    infowindows.  They are pretty ugly at the moment,
@@ -72,7 +124,7 @@ div.address  {
 }
 
 div.description {
-
+    margin: 5px;
 }
 
 div.gm-style-iw {
