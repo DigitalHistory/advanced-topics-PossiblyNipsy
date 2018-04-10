@@ -1,6 +1,4 @@
-# Your Title should go in the appropriate place in `index.html`, not here! Title is itself set only in the `<head>` element
-
-## Use headings only if you want to have subsections in your essay
+# An interview of Residential School survivors, and the lasting effects of their experience.
 
 <div class="sidepanel">
               <!-- This is the div where all the popcorn action will hapen -->
@@ -8,26 +6,24 @@
               </div>
             </div>
 
+The "Residential Schools" for Aboriginal children existed as a Canadian government program intended to assimilate the indigenous people into Canadian culture and society. Instead of re-educating Aboriginal adults, a more effective route of indoctrinating and forcing the indigenous children to abandon their customs was selected. The first Residential schools opened in 1883.[^first] The audio clip, containing an interview of two survivors, provides details of some of their experiences.
 
+As previously stated, the intent of the Residential Schools was to assimilate indigenous children to align them with Canadian culture. At the time, the term "Indian" was still in regular and common use amongst Canadians (and indeed North Americans in general). Simply, it referred to any Aboriginal individual. The Residential schools themselves attempted this aggressive assimilation through often abusive methods, and as a result the mortality rate amongst attending students was 1 in 6.[^second] Between 1883 and 1996, an estimated 150,000 students were in attendance in as many as 80 schools nationwide (at their peak number). The clip raises the issue of the commanding and abusive treatment from the beginning, through reference to mandatory shortened haircuts, physical assaults, rape, and an atmosphere of loneliness, abandonment, and isolation within the walls of the schools.
 
-Add your content here, including _markup_ of **various kinds**. Now you can just write! But you should be aware of a couple of advanced features of markdown:
-- you can embed HTML directly n a markdown file. This is great if you want to add complex attributes like **classes**, e.g. to your `img` tags so that they display properly.
-  - another use of embedded HTML is for funky javascript function links. I've written a simple function that will seek to a particular time code in seconds.  You can call it like this: `<a href="javascript:seek(75)">seek to 1:15</a>`, but `[seek to 1:15](javascript:seek(75))` won't render properly, so you have to type the whole linke in, as seen here: <a href="#" onclick="javascript:seek(75)"> seek to 1:15</a>.
-  - also, Remarkable supports pandoc-style footnotes, which can be helpful sometimes. Here are some examples of footnotes at work:
+The isolation felt by the students has been well-recognized in after-the-fact coverage of the program. Efforts to stifle expression of the Aboriginal culture included mandatory English immersion, as well as ridicule and punishment for speaking in their native tongue. [^third] As the survivors being interviewed recount, their abuses were not often retold to their parents as they occurred. The ability for a child to compare the abuses within a Residential school to a properly-operated public institution they had never attended was understandably rare. The efforts to assimilate the Aboriginal children even extended into aspects of living conditions, such as the type and quality of food being provided to the teaching staff and the students. The diet of the students was not aligned with "traditional" Aboriginal meals, instead being a lower-quality version of staple Western foods. As the survivors recount, the children were essentially (and literally) forced to consume whatever was presented to them.
 
-    Footnote 1 link[^first].
+Attempts by the students to protest the living conditions and treatment were expectedly unsuccessful. As the survivors recount of one particular instance, they faced physical compulsion by the teachers to finish their meals. This is unsurprising considering the purpose and nature of the program; violent indoctrination to assimilate Aboriginal children likely meant that protests against the method or the institution itself were not tolerated and were met by force.
 
-    Footnote 2 link[^second].
+The Canadian Government established a _Truth and Reconciliation Commission_ (TRC) after the last Residential School closed its doors in 1996. The Commission described the program of residential schools as a "cultural genocide", which was intended to totally remove Aboriginal culture from their communities and fully assimilate them into Canadian life and customs. Though the survivors vary in age and number, there is notable continuity of trauma within the families of those who experienced the Residential schools.[^fourth] The interviewer in the attached audio is himself is a child of residential school survivors. The trauma and the detrimental effects were conveyed to him, passed on by his parents, and prompted him to investigate the schools and their history. There are parallels between the experiences of Residential schools and other instances of "historical trauma", as explained by Bombay et al.[^fifth] While intergenerational discrimination against Aboriginals on the part of the Canadian government has ceased, the lasting effects of the continued policy of mistreatment, assimilation, and indeed conquest have left their mark on the Aboriginal society itself. A perception of the people as excluded and inherently different is therefore a psychological construction that has been assembled and contributed to over centuries. While Bombay reads instances of historical trauma in a greater context, i.e. groups that face similar external oppression over time, the presence, existence, and history of Canadian Residential Schools has shown that ill-effects of abusive treatment create intergenerational scars.
 
-    Inline footnote^[Text of inline footnote] definition.
+The audio indicates different methods among Aboriginal sub-communities to come to terms with the abusive history of Residential schools. While some, as the interviewees indicate, have kept the structures and employ them as symbols and locations for healing ceremonies, others have decided to erase the evidence by burning the buildings down themselves as an act of symbolic retribution. There does not seem to be any definite indicator of whether one method is inherently more effective for reconciliation than another. This sort of disparity is an important element in historical analysis of systemic exclusion or discrimination. Identifying a method by which a community can heal from the experience of tragedy is important for placing the events within the realm of historical analysis, no longer as simply _current_ or _recent_ events.
 
-    Duplicated footnote reference[^second].
+[^first]: http://www.cbc.ca/news/indigenous/truth-and-reconciliation-commission-by-the-numbers-1.3096185
 
-you can learn more about remarkable on [its github page](https://github.com/jonschlinkert/remarkable), and get a fuller sense of the syntax [in the online demo](https://jonschlinkert.github.io/remarkable/demo/)
+[^second]: ibid
 
+[^third]: http://muse.jhu.edu.myaccess.library.utoronto.ca/article/670700
 
-[^first]: Footnote **can have markup**
+[^fourth]: https://journals-scholarsportal-info.myaccess.library.utoronto.ca/details/13634615/v51i0003/320_tieoirftcoht.xml, page 323
 
-    and multiple paragraphs.
-
-[^second]: Footnote text.
+[^fifth]: ibid, page 330

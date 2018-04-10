@@ -3707,7 +3707,7 @@
   // it will default to using an HTML5 video in the target.
   Popcorn.smart = function( target, src, options ) {
     var node = typeof target === "string" ? Popcorn.dom.find( target ) : target,
-        i, srci, j, media, mediaWrapper, popcorn, srcLength, 
+        i, srci, j, media, mediaWrapper, popcorn, srcLength,
         // We leave HTMLVideoElement and HTMLAudioElement wrappers out
         // of the mix, since we'll default to HTML5 video if nothing
         // else works.  Waiting on #1254 before we add YouTube to this.
@@ -4068,7 +4068,7 @@
         },
         configurable: true
       },
-      
+
       // We really can't do much more than "auto" with most of these.
       preload: {
         get: function() {
@@ -4195,7 +4195,7 @@
     if ( !jwLoaded ) {
       if ( !window.jwplayer ) {
         var tag = document.createElement( "script" );
-        
+
         tag.src = "https://jwpsrv.com/library/zaIF4JI9EeK2FSIACpYGxA.js";
         var firstScriptTag = document.getElementsByTagName( "script" )[ 0 ];
         firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
@@ -4779,7 +4779,7 @@
       video.ended();
     }
     if( video.currentTime < 0 ) {
-       video.pause(0);   
+       video.pause(0);
     }
   }
 
@@ -5169,10 +5169,10 @@
           setMuted( self._util.isAttributeSet( aValue ) );
         }
       },
-      
+
       playbackRate: {
         get: function() {
-          return player.playbackRate;   
+          return player.playbackRate;
         },
         set: function( aValue ) {
           player.playbackRate = aValue;
@@ -7805,8 +7805,8 @@ var wikiCallback;
           optional: true
         },
         src: {
-          elem: "input", 
-          type: "url", 
+          elem: "input",
+          type: "url",
           label: "Wikipedia URL",
           "default": "http://en.wikipedia.org/wiki/Cat"
         },
@@ -8504,7 +8504,7 @@ api - https://github.com/documentcloud/document-viewer/blob/master/public/javasc
             if ( mediaType === "HTML5" ) {
               options.popcorn.controls( true );
             }
-            
+
             // Set them to 0 now so it is hidden
             options._container.style.width = "0px";
             options._container.style.height = "0px";
@@ -10766,7 +10766,7 @@ document.addEventListener( "click", function( event ) {
         options.anchor.style.display = "none";
 
         // add the widget's div to the target div.
-        // if target is <video> or <audio>, create a container and routinely 
+        // if target is <video> or <audio>, create a container and routinely
         // update its size/position to be that of the media
         if ( target ) {
           if ( [ "VIDEO", "AUDIO" ].indexOf( target.nodeName ) > -1 ) {
@@ -10775,7 +10775,7 @@ document.addEventListener( "click", function( event ) {
           }
           else {
             target && target.appendChild( options.anchor );
-          }          
+          }
         }
 
         img.addEventListener( "load", function() {
@@ -10991,21 +10991,21 @@ document.addEventListener( "click", function( event ) {
 (function (Popcorn) {
 
   /**
-   * SBV popcorn parser plug-in 
+   * SBV popcorn parser plug-in
    * Parses subtitle files in the SBV format.
    * Times are expected in H:MM:SS.MIL format, with hours optional
    * Subtitles which don't match expected format are ignored
    * Data parameter is given by Popcorn, will need a text.
    * Text is the file contents to be parsed
-   * 
+   *
    * @param {Object} data
-   * 
+   *
    * Example:
     0:00:02.400,0:00:07.200
     Senator, we're making our final approach into Coruscant.
    */
   Popcorn.parser( "parseSBV", function( data ) {
-  
+
     // declare needed variables
     var retObj = {
           title: "",
@@ -11017,53 +11017,53 @@ document.addEventListener( "click", function( event ) {
         i = 0,
         len = 0,
         idx = 0;
-    
+
     // [H:]MM:SS.MIL string to SS.MIL
     // Will thrown exception on bad time format
     var toSeconds = function( t_in ) {
       var t = t_in.split( ":" ),
           l = t.length-1,
           time;
-      
+
       try {
         time = parseInt( t[l-1], 10 )*60 + parseFloat( t[l], 10 );
-        
+
         // Hours optionally given
-        if ( l === 2 ) { 
+        if ( l === 2 ) {
           time += parseInt( t[0], 10 )*3600;
         }
       } catch ( e ) {
         throw "Bad cue";
       }
-      
+
       return time;
     };
-    
+
     var createTrack = function( name, attributes ) {
       var track = {};
       track[name] = attributes;
       return track;
     };
-  
+
     // Here is where the magic happens
     // Split on line breaks
     lines = data.text.split( /(?:\r\n|\r|\n)/gm );
     len = lines.length;
-    
+
     while ( i < len ) {
       var sub = {},
           text = [],
           time = lines[i++].split( "," );
-      
+
       try {
         sub.start = toSeconds( time[0] );
         sub.end = toSeconds( time[1] );
-        
+
         // Gather all lines of text
         while ( i < len && lines[i] ) {
           text.push( lines[i++] );
         }
-        
+
         // Join line breaks in text
         sub.text = text.join( "<br />" );
         subs.push( createTrack( "subtitle", sub ) );
@@ -11073,13 +11073,13 @@ document.addEventListener( "click", function( event ) {
           i++;
         }
       }
-      
+
       // Consume empty whitespace
       while ( i < len && !lines[i] ) {
         i++;
       }
     }
-    
+
     retObj.data = subs;
 
     return retObj;
@@ -11097,28 +11097,28 @@ document.addEventListener( "click", function( event ) {
           remote: "",
           data: []
         },
-        manifestData = {}, 
+        manifestData = {},
         dataObj = data;
-    
-    
+
+
     /*
       TODO: add support for filling in source children of the video element
-      
-      
+
+
       remote: [
-        { 
-          src: "whatever.mp4", 
+        {
+          src: "whatever.mp4",
           type: 'video/mp4; codecs="avc1, mp4a"'
-        }, 
-        { 
-          src: "whatever.ogv", 
+        },
+        {
+          src: "whatever.ogv",
           type: 'video/ogg; codecs="theora, vorbis"'
         }
       ]
 
     */
-    
-        
+
+
     Popcorn.forEach( dataObj.data, function ( obj, key ) {
       retObj.data.push( obj );
     });
@@ -11132,14 +11132,14 @@ document.addEventListener( "click", function( event ) {
 (function (Popcorn) {
 
   /**
-   * TTXT popcorn parser plug-in 
+   * TTXT popcorn parser plug-in
    * Parses subtitle files in the TTXT format.
    * Style information is ignored.
    * Data parameter is given by Popcorn, will need an xml.
    * Xml is the file contents to be parsed as a DOM tree
-   * 
+   *
    * @param {Object} data
-   * 
+   *
    * Example:
      <TextSample sampleTime="00:00:00.000" text=""></TextSample>
    */
@@ -11157,11 +11157,11 @@ document.addEventListener( "click", function( event ) {
     var toSeconds = function(t_in) {
       var t = t_in.split(":");
       var time = 0;
-      
-      try {        
+
+      try {
         return parseFloat(t[0], 10)*60*60 + parseFloat(t[1], 10)*60 + parseFloat(t[2], 10);
       } catch (e) { time = 0; }
-      
+
       return time;
     };
 
@@ -11176,14 +11176,14 @@ document.addEventListener( "click", function( event ) {
     var node = data.xml.lastChild.lastChild; // Last Child of TextStreamHeader
     var lastStart = Number.MAX_VALUE;
     var cmds = [];
-    
+
     // Work backwards through DOM, processing TextSample nodes
     while (node) {
       if ( node.nodeType === 1 && node.nodeName === "TextSample") {
         var sub = {};
         sub.start = toSeconds(node.getAttribute('sampleTime'));
         sub.text = node.getAttribute('text');
-      
+
         if (sub.text) { // Only process if text to display
           // Infer end time from prior element, ms accuracy
           sub.end = lastStart - 0.001;
@@ -11193,7 +11193,7 @@ document.addEventListener( "click", function( event ) {
       }
       node = node.previousSibling;
     }
-    
+
     returnData.data = cmds.reverse();
 
     return returnData;
@@ -11740,11 +11740,11 @@ document.addEventListener( "click", function( event ) {
       // Later modified by kev: http://kevin.deldycke.com/2007/03/ultimate-regular-expression-for-html-tag-parsing-with-php/
       sub.text = sub.text.replace( /&lt;(\/?(font|b|u|i|s))((\s+(\w|\w[\w\-]*\w)(\s*=\s*(?:\".*?\"|'.*?'|[^'\">\s]+))?)+\s*|\s*)(\/?)&gt;/gi, "<$1$3$7>" );
       sub.text = sub.text.replace( /\\N/gi, "<br />" );
-      
+
       if ( options && options[ "target" ] ) {
         sub.target = options[ "target" ];
       }
-  
+
       subs.push( createTrack( "subtitle", sub ) );
     }
 
@@ -11891,7 +11891,7 @@ document.addEventListener( "click", function( event ) {
    * so .overlay is actually jQuery( "#target .overlay")
    *
    * @param {Object} options
-   * 
+   *
    * Example:
      var p = Popcorn('#video')
         .footnote({
@@ -11929,7 +11929,7 @@ document.addEventListener( "click", function( event ) {
   };
 
   Popcorn.compose( "applyclass", {
-    
+
     manifest: {
       about: {
         name: "Popcorn applyclass Effect",
